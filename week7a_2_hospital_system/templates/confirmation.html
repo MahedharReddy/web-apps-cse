@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmed - CarePlus Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white py-3 text-center">
+                    <h3 class="mb-1">&#10004; Appointment Confirmed!</h3>
+                    <p class="mb-0 small">Your appointment has been validated and successfully booked.</p>
+                </div>
+                <div class="card-body p-4">
+                    <div class="text-center p-3 mb-4 bg-light rounded border">
+                        <span class="text-muted d-block small text-uppercase">Booking Token Number</span>
+                        <span class="fs-3 fw-bold text-primary">{{ appointment.token }}</span>
+                    </div>
+
+                    <table class="table table-bordered align-middle">
+                        <tbody>
+                            <tr>
+                                <th class="text-secondary w-40">Patient Name</th>
+                                <td class="fw-bold">{{ appointment.patient_name }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Assigned Doctor</th>
+                                <td>{{ appointment.doctor }} <span class="badge bg-info text-dark">{{ appointment.specialty }}</span></td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Scheduled Date</th>
+                                <td class="fw-bold text-danger">{{ appointment.date }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Time Slot</th>
+                                <td>{{ appointment.slot }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Contact Mobile</th>
+                                <td>{{ appointment.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Contact Email</th>
+                                <td>{{ appointment.email }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary">Booking Timestamp</th>
+                                <td class="small text-muted">{{ appointment.booked_at }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="alert alert-info py-2 small" role="alert">
+                        <strong>Note:</strong> Please arrive 15 minutes before your scheduled appointment time with this confirmation token.
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="/" class="btn btn-outline-secondary">&larr; Book Another Appointment</a>
+                        <button onclick="window.print()" class="btn btn-primary">Print Slip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

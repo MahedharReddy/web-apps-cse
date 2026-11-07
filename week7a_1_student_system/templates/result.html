@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details - Verified</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white py-3 text-center">
+                    <h4 class="mb-0">Validation Successful!</h4>
+                    <p class="mb-0 small opacity-75">Student Information Verified & Displayed</p>
+                </div>
+                <div class="card-body p-4">
+                    <table class="table table-bordered table-striped align-middle">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="w-35 text-secondary">Student ID / Roll No</th>
+                                <td class="fw-bold">{{ student.student_id }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Student Name</th>
+                                <td>{{ student.name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Department</th>
+                                <td><span class="badge bg-primary fs-6">{{ student.department }}</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Email Address</th>
+                                <td>{{ student.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Semester</th>
+                                <td>{{ student.semester }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="/" class="btn btn-outline-primary">&larr; Register Another Student</a>
+                        <button onclick="window.print()" class="btn btn-secondary">Print Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
